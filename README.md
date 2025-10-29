@@ -1,1 +1,1 @@
-Nombre y Apellidos: Stefani Scott Pernia
+Stefani Scott Pernia
