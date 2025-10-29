@@ -17,19 +17,27 @@ public class CuentaBancaria {
 	public CuentaBancaria(String numeroCuenta, double saldoInicial) {
 		
 		// TODO: Realizar
+		this.numeroCuenta = numeroCuenta;
+		this.saldoInicial = saldoInicial; 
+		this.admiteDescubierto = false;
+		this.operaciones = new ArrayList<>();
 		
 	}
 		
 	public void addOperacion(Operacion operacion) {
-		
-		// TODO: Realizar
-		
+		if (operacion != null) {
+			operaciones.add(operacion);
+		}
+
 	}
 	
 	public double getSaldoActual() {
 		
-		// TODO: Realizar
-		return 0;
+		double saldo = saldoInicial;
+        for (Operacion op : operaciones) {
+            saldo += op.getImporte();
+        }
+        return saldo;
 	}
 
 }
