@@ -1,4 +1,4 @@
-package ej;
+package test.java.es.upm.grise.prof.curso2025.integrador1;
 
 import static org.junit.Assert.assertTrue;
 

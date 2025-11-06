@@ -2,6 +2,12 @@ package es.upm.grise.prof.curso2025.integrador1;
 
 import java.util.ArrayList;
 import java.util.List;
+import es.upm.grise.prof.curso2025.integrador1.CuentaBancaria;
+import es.upm.grise.prof.curso2025.integrador1.Cliente;
+import es.upm.grise.prof.curso2025.integrador1.Operacion;
+import es.upm.grise.prof.curso2025.integrador1.OperacionNulaException;
+import es.upm.grise.prof.curso2025.integrador1.OperacionDuplicadaException;
+
 
 public class CuentaBancaria {
 	
@@ -24,7 +30,7 @@ public class CuentaBancaria {
 		
 	}
 		
-	public void addOperacion(Operacion operacion) {
+	public void addOperacion(Operacion operacion) throws OperacionNulaException, OperacionDuplicadaException{
 		if (operacion == null) {
         	throw new OperacionNulaException("La operación no puede ser nula");
     	}
@@ -42,7 +48,7 @@ public class CuentaBancaria {
 
 	}
 	
-	public double getSaldoActual() {
+	public double getSaldoActual() throws saldoNegativoException {
 		
 		double saldo = saldoInicial;
 		
@@ -60,6 +66,23 @@ public class CuentaBancaria {
 		return saldo; 
 	
         
+	}
+	
+
+	public String getNumeroCuenta() {
+		return numeroCuenta;
+	}
+
+	public double getSaldoInicial() {
+		return saldoInicial;
+	}
+
+	public boolean isAdmiteDescubierto() {
+		return admiteDescubierto;
+	}
+
+	public List<Operacion> getOperaciones() {
+		return operaciones;
 	}
 
 }
